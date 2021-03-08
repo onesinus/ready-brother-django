@@ -1,6 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView
 
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello World From Django")
+from .models import ContactMe
+
+
+class ContactMeListView(ListView):
+    model = ContactMe
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['data'] = ContactMe.objects.all()
+        return context
