@@ -2,6 +2,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 
 from .models import ContactMe
+from .forms import ContactMeForm
 
 
 class ContactMeListView(ListView):
@@ -15,5 +16,5 @@ class ContactMeListView(ListView):
 
 class ContactMeCreateView(CreateView):
     model = ContactMe
-    fields = ['name', 'email', 'phone_number', 'message']
+    form_class = ContactMeForm
     template_name = 'contactme/contactme_form.html'
