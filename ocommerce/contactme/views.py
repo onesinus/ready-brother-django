@@ -1,5 +1,5 @@
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 from .models import ContactMe
 from .forms import ContactMeForm
@@ -15,6 +15,12 @@ class ContactMeListView(ListView):
 
 
 class ContactMeCreateView(CreateView):
+    model = ContactMe
+    form_class = ContactMeForm
+    template_name = 'contactme/contactme_form.html'
+
+
+class ContactMeUpdateView(UpdateView):
     model = ContactMe
     form_class = ContactMeForm
     template_name = 'contactme/contactme_form.html'
