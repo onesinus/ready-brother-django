@@ -1,5 +1,5 @@
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import ContactMe
 from .forms import ContactMeForm
@@ -24,3 +24,8 @@ class ContactMeUpdateView(UpdateView):
     model = ContactMe
     form_class = ContactMeForm
     template_name = 'contactme/contactme_form.html'
+
+
+class ContactMeDeleteView(DeleteView):
+    model = ContactMe
+    success_url = '/contactme'

@@ -1,0 +1,12 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <center>
+        <h3>Are you sure you want to delete "{{ object }}"?</h3>
+        <input class="btn btn-primary" type="submit" value="Confirm">
+        <a href="{% url 'contactme-list' %}" class="btn btn-secondary">Cancel</a>
+    </center>
+</form>
+{% endblock %}

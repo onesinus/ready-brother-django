@@ -9,5 +9,8 @@ class ContactMe(models.Model):
     phone_number = models.CharField(max_length=25)
     message = models.TextField()
 
+    def __str__(self):
+        return self.name
+
     def get_absolute_url(self):
         return reverse('contactme-list')
