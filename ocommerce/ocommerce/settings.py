@@ -27,6 +27,7 @@ SECRET_KEY = 'oklm8@8e3h%1vznp(-6n)(2bpza!ylwtmcq(x1@9_0x@*%1xn2'
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
     'onesinus.pythonanywhere.com'
 ]
 
@@ -123,7 +124,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+if DEBUG is False:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+else:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        BASE_DIR / "static",
+    ]
