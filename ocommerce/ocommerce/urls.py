@@ -17,14 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import HomeView
 from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
     path('contactme/', include('contactme.urls'))
-]
-
-if not settings.DEBUG:
-    urlpatterns.append(
-        path('', (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
-    )
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
