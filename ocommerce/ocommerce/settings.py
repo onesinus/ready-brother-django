@@ -28,7 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
-    'onesinus.pythonanywhere.com'
+    'onesinus.pythonanywhere.com',
+    '.herokuapp.com'
 ]
 
 
