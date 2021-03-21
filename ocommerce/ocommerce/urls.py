@@ -22,4 +22,20 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('contactme/', include('contactme.urls')),
     path('category-menu/', include('category_menu.urls')),
+    path('sellers/', include('sellers.urls')),
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

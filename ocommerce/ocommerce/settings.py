@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
+    '127.0.0.1',
     'onesinus.pythonanywhere.com',
     '.herokuapp.com'
 ]
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'contactme',
     'mptt',
     'category_menu',
+    'treebeard',
+    'sellers',
 ]
 
 MIDDLEWARE = [
