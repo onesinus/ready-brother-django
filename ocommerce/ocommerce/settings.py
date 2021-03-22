@@ -23,16 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'oklm8@8e3h%1vznp(-6n)(2bpza!ylwtmcq(x1@9_0x@*%1xn2'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Import variables depending on environment variable
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'onesinus.pythonanywhere.com',
-    '.herokuapp.com'
-]
+ENV = os.environ.get('ENV')
+if ENV == "Production":
+    from .configurations.production import *
+elif ENV == "Staging":
+    from .configurations.staging import *
+else:
+    from .configurations.development import *
 
+# End Import variables
 
 # Application definition
 
