@@ -9,3 +9,4 @@ PyMySQL==1.0.2
 pytz==2021.1
 sqlparse==0.4.1
 whitenoise==5.2.0
+sentry_sdk
