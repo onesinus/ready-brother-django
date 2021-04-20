@@ -3,10 +3,10 @@ version: "3.3"
 services:
   web:
     build: .
-    command: gunicorn ocommerce.wsgi:application --bind 0.0.0.0:8000
+    # command: gunicorn ocommerce.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "80:80"
     environment:
       - ENV=Production
