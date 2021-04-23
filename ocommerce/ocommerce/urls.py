@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomeView
+from .views import HomeView, try_set_memcached, try_get_memcached
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,19 +23,6 @@ urlpatterns = [
     path('contactme/', include('contactme.urls')),
     path('category-menu/', include('category_menu.urls')),
     path('sellers/', include('sellers.urls')),
+    path('set_data_to_memcached', try_set_memcached),
+    path('get_data_from_memcached', try_get_memcached),
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
